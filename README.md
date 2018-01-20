@@ -23,6 +23,10 @@ You can increase ```hash_tag``` in **hast_tag** for retweets.<br>
  edit: <br>
  hash_tag = ['example','example2']<br>
  Now ```for``` loop will automatically itrate ```hash_tag```
+
+ You can set retweet time by changing ```retweet_time``` in ```TweetBot``` class
+ 
+ If you want to run this script for a long time then you can uncomment ```tweet.loop_retweet()``` at the end of script. You can aslo specify the time of loop by changing ```loop_retweet_time``` in  ```TweetBot``` class.
  
 
 
