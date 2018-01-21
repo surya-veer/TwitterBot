@@ -41,6 +41,10 @@ class TwitterBot():
                     print('\nError. Unable to tweet:')
                     print(error.reason)
 
+    #update_status
+    def tweet(self,status):
+        self.api.update_status(status=status,lat='28.6466773',long='76.813073')  #@28.6466773,76.813073 for delhi 
+
     ##loop retweet
     def loop_retweet(self):
         while True:
@@ -52,3 +56,4 @@ class TwitterBot():
 twitter_bot = TwitterBot()
 twitter_bot.retweet()
 # twitter_bot.loop_retweet()   #uncomment if you want infinte loop of retweet
+# twitter_bot.tweet(status = "I am Happy Today!!")    #uncomment if you want to make a tweet or update your status
