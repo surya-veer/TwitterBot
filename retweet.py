@@ -45,6 +45,7 @@ class TwitterBot():
     def loop_retweet(self):
         while True:
             self.retweet()
+            print("\n\n Waiting for tweets.....")
             time.sleep(self.loop_retweet_time)
 
 
