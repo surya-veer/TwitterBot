@@ -15,12 +15,16 @@ access_token_secret = '**********'
 # you can add more tags.. in hash_tag list
 hash_tags = ['#example1','#example2','#example3']
 
+
 class TwitterBot():
     """Class for Twitter Bot"""
 
+    # Only iterate through the first 5 statuses
+    interate_limit = 5  
+
     ##time setup in seconds
     retweet_time = 10
-    loop_retweet_time = 30  #30 min
+    loop_retweet_time = 30*60  #30 min
 
     def __init__(self):
         self.auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
@@ -29,7 +33,7 @@ class TwitterBot():
 
     def retweet(self):
         for query in hash_tags:
-            for tweet in tweepy.Cursor(self.api.search, q=query).items(5):
+            for tweet in tweepy.Cursor(self.api.search, q=query).items(interate_limit):
                 try:
                     print('\nTweet by @' + tweet.user.screen_name)
                     print('Attempting to retweet')
